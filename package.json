@@ -1,0 +1,27 @@
+{
+  "name": "free-for-all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hello-world-ttj/free-for-all.git"
+  },
+  "author": "hello-world-ttj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hello-world-ttj/free-for-all/issues"
+  },
+  "homepage": "https://github.com/hello-world-ttj/free-for-all#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22",
+    "volleyball": "^1.5.1"
+  }
+}
