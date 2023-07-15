@@ -20,6 +20,7 @@ const response = (res, status, message, data) => {
       message: message,
       data: data,
     };
+    return res.status(status).json(response_structure);
   }
 };
 
