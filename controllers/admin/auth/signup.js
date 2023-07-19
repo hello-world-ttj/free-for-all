@@ -4,19 +4,20 @@ const {
 } = require("../../../helpers/validation/validation");
 const admin_model = require("../../../models/admin.model");
 const response = require("../../../helpers/responses/response");
+let md5 = require("md5");
 const admin_signup_controller = async (req, res) => {
   try {
-    let admin_login_validator = admin_signup_schema_validation.validate(
+    let admin_signup_validator = admin_signup_schema_validation.validate(
       req.body,
       { abortEarly: false }
     );
-    if (admin_login_validator.error)
-      return response(res, 400, "Invalid fields", admin_login_validator.error);
+    if (admin_signup_validator.error)
+      return response(res, 400, "Invalid fields", admin_signup_validator.error);
     let data = {
       admin_first_name: req.body.admin_first_name,
       admin_last_name: req.body.admin_last_name,
       admin_name: req.body.admin_name,
-      admin_password: req.body.admin_password,
+      admin_password: md5(req.body.admin_password),
     };
     let save_admin = await admin_model(data);
     let save_data = await save_admin.save();
