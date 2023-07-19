@@ -10,7 +10,10 @@ const response = require("./helpers/responses/response");
 app.use(express.json());
 const PATH = `/api/${process.env.API_VERSION}`;
 const admin_route = require("./routes/admin");
+const user_route = require("./routes/user");
+
 app.use(`${PATH}/admin`, admin_route);
+app.use(`${PATH}/user`, user_route);
 
 app.get(`${PATH}`, (req, res) => {
   return response(res, 200, "API Testing", null);
