@@ -1,8 +1,8 @@
 const Joi = require('joi');
 
 exports.admin_login_schema_validation = Joi.object({
-    user_name: Joi.string().required(),
-    user_password: Joi.string().required()
+    admin_name: Joi.string().required(),
+    admin_password: Joi.string().required()
 })
 
 exports.admin_signup_schema_validation = Joi.object({
